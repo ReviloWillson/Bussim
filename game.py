@@ -1,6 +1,8 @@
 import random, sys, os
 
-sys.path.append(os.path.abspath(os.path.join('', '')))
+USER = os.environ.get('USER')
+
+sys.path.append(os.path.abspath(os.path.join('/home/%s'% (USER), 'Bussim')))
 
 import vars
 

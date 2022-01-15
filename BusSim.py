@@ -5,7 +5,7 @@ import os, sys
 
 USER = os.environ.get('USER')
 
-sys.path.append(os.path.abspath(os.path.join('/home/%s' % (USER), 'bussim')))
+sys.path.append(os.path.abspath(os.path.join('/home/%s' % (USER), 'Bussim')))
 
 import game
 
