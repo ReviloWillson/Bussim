@@ -4,11 +4,20 @@ from turtle import *
 import os, sys
 
 USER = os.environ.get('USER')
+if sys.platform == 'linux':
+        sys.path.append(os.path.abspath(os.path.join('/home/%s'% (USER), 'Bussim')))
+elif sys.platform == 'win':
+        sys.path.append(os.path.abspath(os.path.join('C://Users/%s'%(USER), 'Bussim')))
+else:
+        print('Your current OS: %s is not supported.'% (sys.platform))
+        quit()
 
-sys.path.append(os.path.abspath(os.path.join('/home/%s' % (USER), 'Bussim')))
-
-import game
-
+try:
+        import game
+except ModuleNotFoundError:
+        print('Game failed to import. Please reinstall from Github.')
+        quit()
+        
 
 
 print('[  %s  ]: Loading Launcher...' % (USER))
