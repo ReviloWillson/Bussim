@@ -1,9 +1,15 @@
 import random, sys, os
 
+
 USER = os.environ.get('USER')
 
-sys.path.append(os.path.abspath(os.path.join('/home/%s'% (USER), 'Bussim')))
-
+if sys.platform == 'linux':
+	sys.path.append(os.path.abspath(os.path.join('/home/%s'% (USER), 'Bussim')))
+elif sys.platform == 'win':
+	sys.path.append(os.path.abspath(os.path.join('C://Users/%s'%(USER), 'Bussim')))
+else:
+	print('Your OS (%s) is not supported.'% (sys.platform))
+	quit()
 import vars
 
 
