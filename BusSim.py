@@ -6,11 +6,11 @@ import os, sys
 USER = os.environ.get('USER')
 if sys.platform == 'linux':
         sys.path.append(os.path.abspath(os.path.join('/home/%s'% (USER), 'Bussim')))
-elif sys.platform == 'win':
-        sys.path.append(os.path.abspath(os.path.join('C://Users/%s'%(USER), 'Bussim')))
+elif sys.platform == 'win32':
+        sys.path.append(os.path.abspath(os.path.join('C://Users/%s'%(USER), 'Bussim-main')))
 else:
         print('Your current OS: %s is not supported.'% (sys.platform))
-        quit()
+        
 
 try:
         import game

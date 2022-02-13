@@ -1,15 +1,15 @@
-import random, sys, os
+import random, sys, os, time
 
 
 USER = os.environ.get('USER')
 
 if sys.platform == 'linux':
 	sys.path.append(os.path.abspath(os.path.join('/home/%s'% (USER), 'Bussim')))
-elif sys.platform == 'win':
-	sys.path.append(os.path.abspath(os.path.join('C://Users/%s'%(USER), 'Bussim')))
+elif sys.platform == 'win32':
+	sys.path.append(os.path.abspath(os.path.join('C://Users/%s'%(USER), 'Bussim-main')))
 else:
 	print('Your OS (%s) is not supported.'% (sys.platform))
-	quit()
+	
 import vars
 
 
@@ -83,6 +83,9 @@ def run():
 				s_Ru()
 		else:
 			print('You have gone bankrupt!')
+			time.sleep(3)
 			quit()
+			
+			
 
 
